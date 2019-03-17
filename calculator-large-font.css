@@ -1,0 +1,66 @@
+body {
+	font-family: helvetica, arial, sans-serif;
+  margin: 16px;
+  color: white;
+  background: black;
+}
+
+#calculator {
+  background: black;
+  padding: 32px; width:
+  462px; text-align: center;
+  border: 3px solid white;
+}
+
+
+
+#calculator h1 {
+  font-size: 200%;
+  font-family: helvetica, arial, sans-serif;
+  color: white;
+}
+
+
+.calculator_row { margin-bottom: 8px;}
+.calculator_row button {
+  font-size: xx-large;
+  padding: 10px;
+  width: 100px;
+  background: black;
+  border: 2px solid white;
+  font-family: ocr-a, consolas, monospaced;
+  font-weight: bold;
+  margin: 5px;}
+
+.calculator_row button {
+  background: black;
+  color: white;
+}
+
+
+button.meta { background: grey; color: white; border: white;}
+button.function { background: grey; color: white; border: white;}
+button:active { background: black; color: white; border: white;}
+
+button.cursor { background: black; color: white;}
+
+#number_input { font-size: xx-large;
+  font-family: ocr-a, consolas, monospaced;
+  background: black;
+  color: white;
+  padding: 8px;
+  text-align: right;
+  width: 416px;
+  font-weight: bold;
+  border: 2px solid white;
+  height: 50px;
+}
+
+label {
+	display: inline-block; width: 50px; font-weight: bold; color: white;
+}
+
+#settings {
+	border: 1px solid white;
+	padding: 10px;
+}

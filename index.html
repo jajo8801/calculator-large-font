@@ -1,182 +1,89 @@
-<html lang="en">
-  <head>
-    <title>Jacob Johnson</title>
-    <link rel="stylesheet" href="phone.css">
-    <script src="phone.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() { // do this when the document is loaded
-            openTab(event, 'content_dialer')
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>
+			Calculator Demo
+		</title>
 
-        });
-    </script>
-  </head>
-  <body>
-    <div id="tab_bar" role="navigation">
-    	<button class="tab_links" onclick="openTab(event, 'content_dialer')" id="dialer" tabindex="1" accesskey="d">Dialer</button>
-    	<button class="tab_links" onclick="openTab(event, 'content_contacts')" id="contacts" tabindex="2" accesskey="c">Contact List</button>
-    	<button class="tab_links" onclick="openTab(event, 'content_add_contacts')" id="add_contacts" tabindex="3" accesskey="a">Add Contacts</button>
-      <button class="tab_links" onclick="openTab(event, 'content_help')" id="help" tabindex="4" accesskey="h">Help</button>
-    </div>
+		<script src="jquery-3.3.1.min.js"></script>
 
-    <div id="content_dialer" class="tabs_names" role="main">
-    	<div class ="titles" id="content_dialer_title">Dialer</div>
-    	<input type="text" id="content_dialer_input" aria-live="polite">
-    	<div id="content_dialer_keypad">
-    		<button class="dialer_keys" onclick="dialNumber(event, 1, 'content_dialer_input')" id="content_dialer_keypad_1" tabindex="5" accesskey="1">1</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 2, 'content_dialer_input')" id="content_dialer_keypad_2" tabindex="6" accesskey="2">2</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 3, 'content_dialer_input')" id="content_dialer_keypad_3" tabindex="7" accesskey="3">3</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 4, 'content_dialer_input')" id="content_dialer_keypad_4" tabindex="8" accesskey="4">4</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 5, 'content_dialer_input')" id="content_dialer_keypad_5" tabindex="9" accesskey="5">5</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 6, 'content_dialer_input')" id="content_dialer_keypad_6" tabindex="10" accesskey="6">6</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 7, 'content_dialer_input')" id="content_dialer_keypad_7" tabindex="11" accesskey="7">7</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 8, 'content_dialer_input')" id="content_dialer_keypad_8" tabindex="12" accesskey="8">8</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 9, 'content_dialer_input')" id="content_dialer_keypad_9" tabindex="13" accesskey="9">9</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, '*', 'content_dialer_input')" id="content_dialer_keypad_*" tabindex="14" accesskey="*">*</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 0, 'content_dialer_input')" id="" tabindex="15" accesskey="0">0</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, '#', 'content_dialer_input')" id="content_dialer_keypad_#"  tabindex="16" accesskey="#">#</button>
-    		<button class="dialer_keys" onclick="dialNumber(event, 'dial', 'content_dialer_input')" id="content_dialer_keypad_dial" tabindex="17" accesskey="-">Dial</button>
-        <button class="dialer_keys" onclick="dialNumber(event, 'clear', 'content_dialer_input')" id="content_dialer_keypad_clear" tabindex="18" accesskey="=">Clear</button>
-      </div>
-    </div>
+		<link id="original" rel="stylesheet" type="text/css" href="calculator.css">
+		<script>
+		function turnGrey(){
+		document.getElementById("original").href="calculator-large-font.css";
+		}
+		</script>
+		<button id="grey" onclick="turnGrey">Turn Grey</button><br />
+	</head>
+	<body>
 
-
-    <div id="content_contacts" class="tabs_names" role="main" aria-live="polite">
-    	<div class ="titles" id="content_contacts_title">Contacts</div>
-
-      <table style="width:100%">
-        <tr>
-          <th>Name</th>
-          <th>Phone Number</th>
-          <th>Email</th>
-        </tr>
-        <tr>
-          <td>Kristi Sophia</td>
-          <td>303-555-5555</td>
-          <td>krso1234@colorado.edu</td>
-        </tr>
-        <tr>
-          <td>Ankita Nadiya</td>
-          <td>303-123-4567</td>
-          <td>abna@colorado.edu</td>
-        </tr>
-        <tr>
-          <td>Nuka Turlough</td>
-          <td>555-657-9157</td>
-          <td>nutu@colorado.edu</td>
-        </tr>
-        <tr>
-          <td>Fatima Priska</td>
-          <td>908-563-3890</td>
-          <td>fapr@colorado.edu</td>
-        </tr>
-        <tr>
-          <td>Tafik Andrija</td>
-          <td>719-908-2876</td>
-          <td>taan@colorado.edu</td>
-        </tr>
-      </table>
-
-<!--
-      <button class="dialer_keys" tabindex="4" accesskey="z">Kristi Sophia</button>
-      <button class="dialer_keys" tabindex="5" accesskey="x">Ankita Nadiya</button>
-      <button class="dialer_keys" tabindex="6" accesskey="v">Nuka Turlough</button>
-      <button class="dialer_keys" tabindex="7" accesskey="b">Fatima Priska</button>
-      <button class="dialer_keys" tabindex="8" accesskey="m">Tafik Andrija</button>
--->
-    </div>
-
-
-    <div id="content_add_contacts" class="tabs_names" role="main">
-    	<div class ="titles" id="content_add_contacts_title">Add Contact</div>
-    	<div class="div_add_contact" role="form">
-    		<form id="form_add_contact" aria-live="polite">
-    			<div class="form_text">Name</div>
-          <input type="text" id="form_add_contact_name" tabindex="5" accesskey="n">
-    			<div class="form_text">Phone Number</div>
-          <input type="text" id="form_add_contact_phone" tabindex="6" accesskey="p">
-    			<div class="form_text">Email Address</div>
-          <input type="text" id="form_add_contact_email" tabindex="7" accesskey="e">
-          <div id="form_add_clear_group">
-            <button id="form_add_contact_submit" onclick="addContact(event, 'add', 'form_add_contact')" tabindex="8" accesskey=",">Add Contact</button>
-            <button id="form_add_contact_submit" onclick="addContact(event, 'clear', 'form_add_contact')" tabindex="9" accesskey=".">Clear</button>
-          </div
-    		</form>
-    	</div>
-    </div>
-
-
-    <div id="content_help" class="tabs_names" role="main">
-      <img src="help.jpg" longdesc="Close pins holding speech three bubbles that say we can help." style="width:auto;">
-      <div class="titles" id="conent_help_title">Help</div>
-
-      <table style="width:100%">
-        <tr>
-          <th>Command</th>
-          <th>Keys</th>
-        </tr>
-        <tr>
-          <td>Windows Access Key</td>
-          <td>Shift + Alt</td>
-        </tr>
-        <tr>
-          <td>Mac Access Key</td>
-          <td>Control + Option</td>
-        </tr>
-        <tr>
-          <td>Toggle Selection</td>
-          <td>Tab/Shift+Tab</td>
-        </tr>
-        <tr>
-          <td>Dialer</td>
-          <td>Access Key + </td>
-        </tr>
-        <tr>
-          <td>Contact List</td>
-          <td>Access Key + c</td>
-        </tr>
-        <tr>
-          <td>Help</td>
-          <td>Access Key + h</td>
-        </tr>
-        <tr>
-          <td>Dialer Keypad</td>
-          <td>Access Key + [NUMBER or # or *]</td>
-        </tr>
-        <tr>
-          <td>Dial Number</td>
-          <td>Access Key + -</td>
-        </tr>
-        <tr>
-          <td>Clear Number</td>
-          <td>Access Key + =</td>
-        </tr>
-        <tr>
-          <td>Add Contact</td>
-          <td>Access Key + a</td>
-        </tr>
-        <tr>
-          <td>Go to Name</td>
-          <td>Access Key + n</td>
-        </tr>
-        <tr>
-          <td>Go to Number</td>
-          <td>Access Key + p</td>
-        </tr>
-        <tr>
-          <td>Go to Email</td>
-          <td>Access Key + e</td>
-        </tr>
-        <tr>
-          <td>Submit Contact</td>
-          <td>Access Key + ,</td>
-        </tr>
-        <tr>
-          <td>Clear Form</td>
-          <td>Access Key + .</td>
-        </tr>
-      </table>
-      <p>Picture taken from: https://www.vitalchek.com/content/contact-us.aspx</p>
-    </div>
-  </body>
+		<div id="calculator">
+			<h1>calc U l8r</h1>
+			<div class="calculator_row">
+				<input id="number_input">
+			</div>
+			<div class="calculator_row">
+				<button id="button7" class="calcButton row1 col1">7</button>
+				<button id="button8" class="calcButton row1 col2">8</button>
+				<button id="button9" class="calcButton row1 col3">9</button>
+				<button id="buttonDivide" class="calcButton row1 col4 function">/</button>
+			</div>
+			<div class="calculator_row">
+				<button id="button4" class="calcButton row2 col1">4</button>
+				<button id="button5" class="calcButton row2 col2">5</button>
+				<button id="button6" class="calcButton row2 col3">6</button>
+				<button id="buttonMultiply" class="calcButton row2 col4 function">*</button>
+			</div>
+			<div class="calculator_row">
+				<button id="button1" class="calcButton row3 col1">1</button>
+				<button id="button2" class="calcButton row3 col2">2</button>
+				<button id="button3" class="calcButton row3 col3">3</button>
+				<button id="buttonAdd" class="calcButton row3 col4 function">+</button>
+			</div>
+			<div class="calculator_row">
+				<button id="button0" class="calcButton row4 col1">0</button>
+				<button id="buttonClear" class="calcButton row4 col2 meta">C</button>
+				<button id="buttonEquals" class="calcButton row4 col3 meta">=</button>
+				<button id="buttonSubtract" class="calcButton row4 col4 function">-</button>
+			</div>
+		</div>
+		<div id="comments">
+			<h2>About this app</h2>
+			<ul>
+				<p><b>Instructions for using the app</b><p>
+				<li>Use WASD for up, left, down, and right selection movements.</li>
+				<li>Also use , (COMMA) for left and . (PERIOD)for right movements.</li>
+				<li>Use the space bar to select the key for both interfaces.</li>
+				<br><br>
+				<p><b>Test</b></p>
+				<li>This test will be comparing the 5 button controls vs the 3 button controls.</li>
+				<li>Time the tasks using a stopwatch of your choice and type the following equaitons without errors.</li>
+				<li>At the end of the exercise repeat two more times then average the times for each trial</li>
+				<li>Each equation ends with "=C" meaning you should select the "=" button and the "C" button on the calculator after each equation</li>
+				<li>10+9/5*3471-82=C</li>
+				<li>87*13/56-20+94=C</li>
+				<li>1234567890*987654321+567890-4321=C</li>
+				<li>909090*515151-65+1234321=C</li>
+				<li>8*4+4321/56789-10=C</li>
+				<br><br>
+				<p><b>Test results</b></p>
+				<li>After excuting the test above, I had the following times for the 5 button interface:</li>
+				<li>Trial 1: 2:50.53 minutes -> 5 errors</li>
+				<li>Trial 2: 2:35.85 minutes -> 3 errors</li>
+				<li>Trial 3: 2:33.78 minutes -> 1 error</li>
+				<l><b>Average:</b> 2:40.05 minutes, 4.5 errors</li>
+				<br><br>
+				<li>After excuting the test above, I had the following times for the 3 button interface:</li>
+				<li>Trial 1: 5:25.93 minutes -> 3 errors</li>
+				<li>Trial 2: 5:20.99 minutes -> 4 errors</li>
+				<li>Trial 3: 5:23.35 minutes -> 2 errors</li>
+				<l><b>Average:</b> 5:23.42 minutes 4.5 errors</li>
+				<br><br>
+				<b>Conclusion:</b>
+				<p>From these tests, it can be concluded that the 3 button interface is signinfcantly more difficult to operate than the 5 button interface.While both the 5 button and 3 button tests had the same average number of errors, the 5 button test interface took a little more than 1/2 the time to enter the equations.</p>
+			</ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+		<script src="calculator.js" type="text/javascript"></script>
+	</body>
 </html>
